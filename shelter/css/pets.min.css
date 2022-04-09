@@ -500,8 +500,8 @@ body {
 .header__logo {
   display: flex;
   flex-direction: column;
-  width: 18.6rem;
   height: 6rem;
+  row-gap: 1rem;
 }
 .header__logo-title {
   font-family: "Georgia";
@@ -509,7 +509,6 @@ body {
   font-size: 3.2rem;
   line-height: 110%;
   letter-spacing: 0.06em;
-  margin: 0 0 1rem;
 }
 .header__logo-subtitle {
   color: #292929;
@@ -527,6 +526,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 3.6rem;
 }
 .header__nav-item {
   padding-bottom: 0.3rem;
@@ -536,9 +536,6 @@ body {
 }
 .header__nav-item a:hover {
   color: #292929;
-}
-.header__nav-item:not(:last-child) {
-  margin-right: 3.6rem;
 }
 .header .nav-item--active {
   color: #292929;
@@ -690,6 +687,12 @@ p {
   justify-content: space-between;
   z-index: 10;
   padding-top: 4rem;
+  gap: 16rem;
+}
+.footer__content {
+  display: flex;
+  padding: 1.6rem 0 6rem;
+  gap: 16rem;
 }
 .footer__img {
   width: 30rem;
@@ -699,8 +702,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 1.6rem;
-  height: 23.4rem;
 }
 .footer__info-title {
   font-weight: 400;
@@ -712,6 +713,7 @@ p {
 .footer__info-item {
   display: flex;
   align-items: center;
+  column-gap: 2rem;
 }
 .footer__info-text {
   font-weight: 400;
@@ -723,20 +725,20 @@ p {
 
 .contacts {
   width: 27.9rem;
+  gap: 4rem;
 }
 .contacts__item-icon {
   width: 4rem;
   height: 3.2rem;
-  margin-right: 2rem;
 }
 
 .locations {
   width: 30.2rem;
+  gap: 3.3rem;
 }
 .locations__item-icon {
   width: 2.2rem;
   height: 3.2rem;
-  margin-right: 2rem;
 }
 
 .footer::before {
@@ -748,7 +750,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 35rem;
+  height: 100%;
   z-index: 1;
 }
 
@@ -778,19 +780,17 @@ p {
   }
 
   .footer__wrap {
-    padding-top: 1.4rem;
+    padding-top: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 6.5rem 6rem;
   }
-  .footer__img {
-    margin-top: 6.5rem;
-  }
-  .footer .contacts {
-    margin-right: 6rem;
+  .footer__content {
+    gap: 6rem;
+    padding-bottom: 0;
   }
 
   .footer::before {
-    height: 63.9rem;
     background-image: url(../img/footer-bg-mob.jpg), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
   }
 }
@@ -839,6 +839,12 @@ p {
 
   .footer__wrap {
     padding: 3rem 0 0;
+    gap: 4rem;
+  }
+  .footer__content {
+    flex-direction: column;
+    padding-top: 0;
+    gap: 4rem;
   }
   .footer__info {
     margin-top: 0;
@@ -852,12 +858,10 @@ p {
   .footer__img {
     width: 26rem;
     height: 26.9rem;
-    margin-top: 4rem;
   }
   .footer .contacts {
     align-items: center;
     height: 20.8rem;
-    margin: 0 0 4rem;
   }
   .footer .locations {
     height: 22.2rem;
@@ -865,7 +869,6 @@ p {
   }
 
   .footer::before {
-    height: 80.9rem;
     background-image: url(../img/footer-bg-mob-320.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
   }
 }

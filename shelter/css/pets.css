@@ -459,6 +459,9 @@ img,
      object-fit: cover;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 button,
@@ -908,7 +911,7 @@ p {
 
 .footer__img {
   width: 300px;
-  height: 310px;
+  height: auto;
 }
 
 .footer__info {
@@ -1317,6 +1320,17 @@ p {
 
   .modal .pet__info {
     padding-top: 4px;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 600px) and (orientation: landscape) {
+  .mobile-menu .menu__header {
+    padding: 30px 0 14vh 10px;
+  }
+
+  .mobile-menu .burger-nav__list {
+    font-size: 5vh;
+    gap: 6vh;
   }
 }
 

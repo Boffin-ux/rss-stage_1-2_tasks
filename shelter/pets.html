@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
    <meta charset="UTF-8">
@@ -14,23 +14,41 @@
 <body>
    <header class="header">
    <div class="container header__wrap">
-      <a href="index.html" class="header__logo">
-         <h1 class="header__logo-title">Cozy House</h1>
-         <p class="header__logo-subtitle">Shelter for pets in Boston</p>
+      <a href="index.html" class="header__logo logo">
+         <h1 class="logo__title">Cozy House</h1>
+         <p class="logo__subtitle">Shelter for pets in Boston</p>
       </a>
-      <nav class="header__nav">
-         <ul class="header__nav-items">
-            <li class="header__nav-item"><a href="index.html">About the shelter</a></li>
-            <li class="header__nav-item nav-item--active"><a href="pets.html">Our pets</a></li>
-            <li class="header__nav-item"><a href="index.html#help">Help the shelter</a></li>
-            <li class="header__nav-item"><a href="#contacts">Contacts</a></li>
+      <nav class="header__nav menu-nav">
+         <ul class="menu-nav__list">
+            <li class="menu-nav__item"><a href="index.html">About the shelter</a></li>
+            <li class="menu-nav__item nav-item--active"><a href="#">Our pets</a></li>
+            <li class="menu-nav__item"><a href="index.html#help">Help the shelter</a></li>
+            <li class="menu-nav__item"><a href="#contacts">Contacts</a></li>
          </ul>
       </nav>
-      <div class="header__menu-burger">
-         <svg class="icons-sprite burger-icon">
-            <use xlink:href="img/icons/icons.svg#burger-black"></use>
-         </svg>
+      <div class="hamburger">
+         <span class="hamburger__line"></span>
       </div>
+      <div class="mobile-menu">
+   <div class="mobile-menu__overlay"></div>
+   <div class="mobile-menu__wrap menu">
+      <div class="mobile-menu__header menu__header">
+         <a href="index.html" class="menu__logo logo">
+            <h1 class="logo__title">Cozy House</h1>
+            <p class="logo__subtitle">Shelter for pets in Boston</p>
+         </a>
+      </div>
+      <nav class="mobile-menu__nav menu-nav burger-nav">
+         <ul class="menu-nav__list burger-nav__list">
+            <li class="menu-nav__item burger-nav__item"><a href="index.html">About the shelter</a></li>
+            <li class="menu-nav__item burger-nav__item nav-item--active"><a href="pets.html">Our pets</a>
+            </li>
+            <li class="menu-nav__item burger-nav__item"><a href="index.html#help">Help the shelter</a></li>
+            <li class="menu-nav__item burger-nav__item"><a href="#contacts">Contacts</a></li>
+         </ul>
+      </nav>
+   </div>
+</div>
    </div>
 </header>
    <main class="main">
@@ -103,18 +121,18 @@
          <div aria-label="Pagination" class="navigation">
             <ul class="navigation__items">
                <li class="navigation__item item--disable" data-disabled="true" aria-label="First item">
-                  <span class="navigation__link">
-                     <<</span> </li> <li class="navigation__item item--disable" data-disabled="true"
-                        aria-label="Previous item">
-                        <span class="navigation__link">
-                           <</span> </li> <li class="navigation__item item--current">
-                              <span class="navigation__link">1</span>
+                  <span class="navigation__link">&#60;&#60;</span> </li>
+               <li class="navigation__item item--disable" data-disabled="true" aria-label="Previous item">
+                  <span class="navigation__link">&#60;</span>
+               </li>
+               <li class="navigation__item item--current">
+                  <span class="navigation__link">1</span>
                </li>
                <li class="navigation__item item--active" data-disabled="false" aria-label="Next item">
-                  <span class="navigation__link">></span>
+                  <span class="navigation__link">&#62;</span>
                </li>
                <li class="navigation__item item--active" data-disabled="false" aria-label="Last item">
-                  <span class="navigation__link">>></span>
+                  <span class="navigation__link">&#62;&#62;</span>
                </li>
             </ul>
          </div>
@@ -170,6 +188,27 @@
       </div>
    </div>
 </footer>
+   <div class="mobile-menu">
+   <div class="mobile-menu__overlay"></div>
+   <div class="mobile-menu__wrap menu">
+      <div class="mobile-menu__header menu__header">
+         <a href="index.html" class="menu__logo logo">
+            <h1 class="logo__title">Cozy House</h1>
+            <p class="logo__subtitle">Shelter for pets in Boston</p>
+         </a>
+      </div>
+      <nav class="mobile-menu__nav menu-nav burger-nav">
+         <ul class="menu-nav__list burger-nav__list">
+            <li class="menu-nav__item burger-nav__item nav-item--active"><a href="javascript:void(0)">About
+                  the
+                  shelter</a></li>
+            <li class="menu-nav__item burger-nav__item"><a href="pets.html">Our pets</a></li>
+            <li class="menu-nav__item burger-nav__item"><a href="#help">Help the shelter</a></li>
+            <li class="menu-nav__item burger-nav__item"><a href="#contacts">Contacts</a></li>
+         </ul>
+      </nav>
+   </div>
+</div>
    <div class="modal">
    <div class="modal__overlay"></div>
    <div class="modal__wrapper pet">
@@ -183,8 +222,10 @@
             <img src="img/pets-jennifer.jpg" alt="pet-image">
          </div>
          <div class="pet__about">
-            <h3 class="pet__name">Jennifer</h3>
-            <p class="pet__breed">Dog - Labrador</p>
+            <div class="pet__header">
+               <h3 class="pet__name">Jennifer</h3>
+               <p class="pet__breed">Dog - Labrador</p>
+            </div>
             <p class="pet__description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find
                a new
                forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to

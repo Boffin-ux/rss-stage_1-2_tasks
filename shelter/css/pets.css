@@ -370,12 +370,18 @@ template {
   transition: transform 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
 }
 
-.mobile-menu.menu--active,
 .mobile-menu__wrap,
-.mobile-menu__overlay {
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+.mobile-menu__overlay,
+.mobile-menu {
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.modal__overlay {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .menu-nav__list,
@@ -540,9 +546,9 @@ input {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 100%;
+  left: 200%;
   width: 100%;
-  overflow: hidden;
+  visibility: hidden;
 }
 
 .mobile-menu__overlay {
@@ -567,11 +573,8 @@ input {
 }
 
 .mobile-menu.menu--active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   left: 0;
-  overflow: inherit;
+  visibility: visible;
 }
 
 .mobile-menu.menu--active .mobile-menu__overlay {
@@ -1000,6 +1003,18 @@ p {
   background: rgba(41, 41, 41, 0.6);
   width: 100%;
   height: 100%;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
+}
+
+.modal__close.close--active {
+  cursor: pointer;
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
 }
 
 .modal__wrapper {
@@ -1013,17 +1028,24 @@ p {
   -webkit-transform: translate(calc(-50% + 30px), -50%);
       -ms-transform: translate(calc(-50% + 30px), -50%);
           transform: translate(calc(-50% + 30px), -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .modal__close {
-  position: absolute;
-  top: 0;
-  right: 10px;
   width: 52px;
   height: 52px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   padding: 18px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
 }
 
 .modal__content {
@@ -1033,8 +1055,8 @@ p {
   overflow: hidden;
   background-color: #FAFAFA;
   border-radius: 9px;
-  margin-top: 52px;
-  margin-right: 52px;
+  width: 900px;
+  height: auto;
 }
 
 .pet__about {
@@ -1121,6 +1143,12 @@ p {
   border-radius: 9px 0 0 9px;
 }
 
+.modal--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media (max-width: 1279px) {
   .container {
     width: calc(100% - 60px);
@@ -1154,11 +1182,13 @@ p {
 
   .footer__wrap {
     padding-top: 14px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 65px 60px;
   }
 

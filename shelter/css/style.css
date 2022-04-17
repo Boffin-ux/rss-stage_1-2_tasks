@@ -370,12 +370,18 @@ template {
   transition: transform 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
 }
 
-.mobile-menu.menu--active,
 .mobile-menu__wrap,
-.mobile-menu__overlay {
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+.mobile-menu__overlay,
+.mobile-menu {
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.modal__overlay {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .donation__legal,
@@ -543,9 +549,9 @@ input {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 100%;
+  left: 200%;
   width: 100%;
-  overflow: hidden;
+  visibility: hidden;
 }
 
 .mobile-menu__overlay {
@@ -570,11 +576,8 @@ input {
 }
 
 .mobile-menu.menu--active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   left: 0;
-  overflow: inherit;
+  visibility: visible;
 }
 
 .mobile-menu.menu--active .mobile-menu__overlay {
@@ -726,7 +729,7 @@ input {
 
 .main-display__img {
   width: 698px;
-  height: 728px;
+  height: auto;
 }
 
 .about__wrap {
@@ -744,7 +747,7 @@ input {
 
 .about__img {
   width: 300px;
-  height: 408px;
+  height: auto;
   margin-left: 175px;
 }
 
@@ -1018,6 +1021,11 @@ input {
   margin: 0;
 }
 
+.donation__img {
+  width: 505px;
+  height: auto;
+}
+
 .main h3 {
   font-size: 35px;
   font-style: normal;
@@ -1173,6 +1181,18 @@ p {
   background: rgba(41, 41, 41, 0.6);
   width: 100%;
   height: 100%;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
+}
+
+.modal__close.close--active {
+  cursor: pointer;
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
 }
 
 .modal__wrapper {
@@ -1186,17 +1206,24 @@ p {
   -webkit-transform: translate(calc(-50% + 30px), -50%);
       -ms-transform: translate(calc(-50% + 30px), -50%);
           transform: translate(calc(-50% + 30px), -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .modal__close {
-  position: absolute;
-  top: 0;
-  right: 10px;
   width: 52px;
   height: 52px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
   padding: 18px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
 }
 
 .modal__content {
@@ -1206,8 +1233,8 @@ p {
   overflow: hidden;
   background-color: #FAFAFA;
   border-radius: 9px;
-  margin-top: 52px;
-  margin-right: 52px;
+  width: 900px;
+  height: auto;
 }
 
 .pet__about {
@@ -1294,6 +1321,12 @@ p {
   border-radius: 9px 0 0 9px;
 }
 
+.modal--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media (max-width: 1279px) {
   .container {
     width: calc(100% - 60px);
@@ -1326,7 +1359,6 @@ p {
 
   .main-display__img {
     width: 569px;
-    height: 593px;
     margin-left: 139px;
   }
 
@@ -1395,16 +1427,17 @@ p {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
-    height: 261px;
   }
 
   .footer__wrap {
     padding-top: 14px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 65px 60px;
   }
 
@@ -1416,6 +1449,10 @@ p {
   .modal__wrapper {
     max-width: 682px;
     max-height: 402px;
+  }
+
+  .modal__content {
+    width: 630px;
   }
 
   .modal .pet__img {
@@ -1484,7 +1521,6 @@ p {
 
   .main-display__img {
     width: 260px;
-    height: 271.77px;
     margin-left: 40px;
   }
 
@@ -1510,7 +1546,6 @@ p {
 
   .about__img {
     width: 260px;
-    height: 353.6px;
   }
 
   .pets__wrap {
@@ -1552,7 +1587,7 @@ p {
 
   .help__list {
     padding: 42px 5px 0;
-    gap: 29.75px;
+    gap: 30px;
   }
 
   .help__item {
@@ -1601,7 +1636,7 @@ p {
   }
 
   .donation__img {
-    height: 177px;
+    width: 300px;
     padding: 42px 20px 0;
   }
 
@@ -1640,7 +1675,6 @@ p {
 
   .footer__img {
     width: 260px;
-    height: 269px;
   }
 
   .footer .contacts {
@@ -1679,7 +1713,7 @@ p {
   }
 
   .modal__content {
-    margin-right: 30px;
+    width: 240px;
   }
 
   .modal .pet__img {

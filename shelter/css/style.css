@@ -378,10 +378,19 @@ template {
   transition: all 0.4s ease-in-out;
 }
 
-.modal__overlay {
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+.pets__items.items--transition-prev,
+.pets__items.items--transition-next {
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+
+.modal {
+  -webkit-transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
+  -o-transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
+  transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
 }
 
 .donation__legal,
@@ -807,13 +816,33 @@ input {
   padding: 19px 65px;
 }
 
+.pets__list {
+  overflow: hidden;
+}
+
 .pets__items {
+  position: relative;
+  left: -100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   padding: 40px;
   gap: 90px;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.pets__items.items--transition-next {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.pets__items.items--transition-prev {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .pets__item {
@@ -1170,8 +1199,11 @@ p {
 }
 
 .modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal__overlay {
@@ -1201,7 +1233,6 @@ p {
   left: 50%;
   z-index: 10;
   max-width: 952px;
-  max-height: 552px;
   width: 100%;
   -webkit-transform: translate(calc(-50% + 30px), -50%);
       -ms-transform: translate(calc(-50% + 30px), -50%);
@@ -1247,7 +1278,7 @@ p {
           flex-direction: column;
   gap: 40px;
   color: #000000;
-  padding: 50px 20px 88px 29px;
+  padding: 50px 20px 0 29px;
 }
 
 .pet__header {
@@ -1322,9 +1353,18 @@ p {
 }
 
 .modal--active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 @media (max-width: 1279px) {
@@ -1391,6 +1431,7 @@ p {
   .pets__items {
     padding: 40px 34px;
     gap: 40px;
+    left: calc(-100% + 27.5px);
   }
 
   .pets__item {
@@ -1448,7 +1489,9 @@ p {
 
   .modal__wrapper {
     max-width: 682px;
-    max-height: 402px;
+    -webkit-transform: translate(calc(-50% + 15px), -50%);
+        -ms-transform: translate(calc(-50% + 15px), -50%);
+            transform: translate(calc(-50% + 15px), -50%);
   }
 
   .modal__content {
@@ -1461,7 +1504,7 @@ p {
   }
 
   .modal .pet__about {
-    padding: 10px 9px 37px 10px;
+    padding: 10px 9px 0 10px;
     gap: 20px;
   }
 
@@ -1556,17 +1599,22 @@ p {
     padding: 12px 0 42px;
   }
 
+  .pets__list {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
   .pets__items {
     padding: 30px 30px 21px;
     max-width: 330px;
     margin: 0 auto 50px;
+    left: calc(-100% + 20px);
   }
 
   .pets__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
-    margin-right: 10px;
   }
 
   .pets__buttons {
@@ -1632,7 +1680,7 @@ p {
 
   .donation__legal {
     margin: 0 10px;
-    max-width: 290px;
+    max-width: 285px;
   }
 
   .donation__img {
@@ -1705,7 +1753,6 @@ p {
 
   .modal__wrapper {
     max-width: 270px;
-    max-height: 393px;
   }
 
   .modal__close {

@@ -6,8 +6,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" href="favicon.ico">
-   <link rel="stylesheet" href="css/style.min.css?_v=20220417171916">
-   <script src="js/main.js?_v=20220417171916" defer></script>
+   <link rel="stylesheet" href="css/style.min.css?_v=20220425140930">
+   <script src="js/main.js?_v=20220425140930" defer></script>
    <title>Cozy House</title>
 </head>
 
@@ -36,7 +36,7 @@
    <div class="mobile-menu__wrap menu">
       <div class="mobile-menu__header menu__header">
          <a href="index.html" class="menu__logo logo">
-            <h1 class="logo__title">Cozy House</h1>
+            <span class="logo__title">Cozy House</span>
             <p class="logo__subtitle">Shelter for pets in Boston</p>
          </a>
       </div>
@@ -94,73 +94,83 @@
       <div class="container pets__wrap">
          <h3 class="pets__header">Our friends who <br>are looking for a house</h3>
          <div class="pets__slider">
-            <ul class="pets__items">
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-katrine.webp" type="image/webp"><img src="img/pets-katrine.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Katrine</p>
-                  <a href="#" class="button pets__item-button">Learn more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-jennifer.webp" type="image/webp"><img src="img/pets-jennifer.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Jennifer</p>
-                  <a href="#" class="button pets__item-button">Learn more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-woody.webp" type="image/webp"><img src="img/pets-woody.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Woody</p>
-                  <a href="#" class="button pets__item-button">Learn more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-sophia.webp" type="image/webp"><img src="img/pets-sophia.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Sophia</p>
-                  <a href="#" class="button pets__item-button">Learn more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-timmy.webp" type="image/webp"><img src="img/pets-timmy.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Timmy</p>
-                  <a href="#" class="button pets__item-button">Learn more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-charly.webp" type="image/webp"><img src="img/pets-charly.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Charly</p>
-                  <a href="#" class="button pets__item-button">Learn
-                     more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-scarlet.webp" type="image/webp"><img src="img/pets-scarlet.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Scarlett</p>
-                  <a href="#" class="button pets__item-button">Learn
-                     more</a>
-               </li>
-               <li class="pets__item">
-                  <div class="pets__item-img">
-                     <picture><source srcset="img/pets-freddie.webp" type="image/webp"><img src="img/pets-freddie.jpg" alt="pets-image"></picture>
-                  </div>
-                  <p class="pets__item-name">Freddie</p>
-                  <a href="#" class="button pets__item-button">Learn
-                     more</a>
-               </li>
-            </ul>
-            <button type="button" class="pets__buttons button-next">
+            <div class="pets__list">
+               <ul class="pets__items" id="slider-carusel">
+                  <li class="pets__item item--prev">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-sophia.webp" type="image/webp"><img src="img/pets-sophia.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Sophia</p>
+                     <a href="#" class="button pets__item-button">Learn more</a>
+                  </li>
+                  <li class="pets__item item--prev">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-timmy.webp" type="image/webp"><img src="img/pets-timmy.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Timmy</p>
+                     <a href="#" class="button pets__item-button">Learn more</a>
+                  </li>
+                  <li class="pets__item item--prev">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-charly.webp" type="image/webp"><img src="img/pets-charly.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Charly</p>
+                     <a href="#" class="button pets__item-button">Learn
+                        more</a>
+                  </li>
+                  <li class="pets__item item--active">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-katrine.webp" type="image/webp"><img src="img/pets-katrine.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Katrine</p>
+                     <a href="#" class="button pets__item-button">Learn more</a>
+                  </li>
+                  <li class="pets__item item--active">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-jennifer.webp" type="image/webp"><img src="img/pets-jennifer.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Jennifer</p>
+                     <a href="#" class="button pets__item-button">Learn more</a>
+                  </li>
+                  <li class="pets__item item--active">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-woody.webp" type="image/webp"><img src="img/pets-woody.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Woody</p>
+                     <a href="#" class="button pets__item-button">Learn more</a>
+                  </li>
+                  <li class="pets__item item--next">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-scarlet.webp" type="image/webp"><img src="img/pets-scarlet.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Scarlett</p>
+                     <a href="#" class="button pets__item-button">Learn
+                        more</a>
+                  </li>
+                  <li class="pets__item item--next">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-freddie.webp" type="image/webp"><img src="img/pets-freddie.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Freddie</p>
+                     <a href="#" class="button pets__item-button">Learn
+                        more</a>
+                  </li>
+                  <li class="pets__item item--next">
+                     <div class="pets__item-img">
+                        <picture><source srcset="img/pets-freddie.webp" type="image/webp"><img src="img/pets-freddie.jpg" alt="pets-image"></picture>
+                     </div>
+                     <p class="pets__item-name">Freddie</p>
+                     <a href="#" class="button pets__item-button">Learn
+                        more</a>
+                  </li>
+               </ul>
+            </div>
+            <button type="button" class="pets__buttons button-next" id="btn-next">
                <svg class="icons-sprite">
                   <use xlink:href="img/icons/icons.svg#arrow"></use>
                </svg>
             </button>
-            <button type="button" class="pets__buttons button-prev">
+            <button type="button" class="pets__buttons button-prev" id="btn-prev">
                <svg class="icons-sprite">
                   <use xlink:href="img/icons/icons.svg#arrow"></use>
                </svg>

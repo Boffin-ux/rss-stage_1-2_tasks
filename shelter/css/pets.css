@@ -378,10 +378,24 @@ template {
   transition: all 0.4s ease-in-out;
 }
 
-.modal__overlay {
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+.navigation .item--disable {
+  -webkit-transition: border-color 0.5s;
+  -o-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+}
+
+.modal {
+  -webkit-transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
+  -o-transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
+  transition: opacity 0.5s ease, visibility 0.3s ease-in-out;
+}
+
+.pets__items.items--transition {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .menu-nav__list,
@@ -733,7 +747,11 @@ input {
 .pets__slider {
   position: relative;
   width: 100%;
-  padding: 44px 20px;
+  padding: 39px 20px 49px;
+}
+
+.pets__list {
+  overflow-y: hidden;
 }
 
 .pets__items {
@@ -745,8 +763,9 @@ input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15px 20px;
+  padding: 19px 20px;
   gap: 30px 40px;
+  height: 930px;
 }
 
 .pets__item {
@@ -992,8 +1011,11 @@ p {
 }
 
 .modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal__overlay {
@@ -1023,7 +1045,6 @@ p {
   left: 50%;
   z-index: 10;
   max-width: 952px;
-  max-height: 552px;
   width: 100%;
   -webkit-transform: translate(calc(-50% + 30px), -50%);
       -ms-transform: translate(calc(-50% + 30px), -50%);
@@ -1069,7 +1090,7 @@ p {
           flex-direction: column;
   gap: 40px;
   color: #000000;
-  padding: 50px 20px 88px 29px;
+  padding: 50px 20px 0 29px;
 }
 
 .pet__header {
@@ -1144,9 +1165,18 @@ p {
 }
 
 .modal--active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 @media (max-width: 1279px) {
@@ -1165,13 +1195,12 @@ p {
   }
 
   .pets__slider {
-    padding: 0 30px 18px;
+    padding: 0 30px 38px;
   }
 
   .pets__items {
     padding: 29px 34px 20px;
-    height: 1415px;
-    overflow: hidden;
+    height: 1395px;
   }
 
   .pets__item {
@@ -1198,8 +1227,11 @@ p {
   }
 
   .modal__wrapper {
-    max-width: 682px;
-    max-height: 402px;
+    width: 682px;
+  }
+
+  .modal__content {
+    width: 630px;
   }
 
   .modal .pet__img {
@@ -1208,7 +1240,7 @@ p {
   }
 
   .modal .pet__about {
-    padding: 10px 9px 37px 10px;
+    padding: 10px 9px 0 10px;
     gap: 20px;
   }
 
@@ -1251,12 +1283,12 @@ p {
   }
 
   .pets__slider {
-    padding: 15px 0 17px;
+    padding: 15px 0 37px;
   }
 
   .pets__items {
     max-width: 300px;
-    padding: 25px 18px 18px;
+    padding: 25px 15px 18px;
     margin: 0 auto;
   }
 
@@ -1264,7 +1296,6 @@ p {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
-    margin-right: 10px;
   }
 
   .pets__buttons {
@@ -1328,8 +1359,7 @@ p {
   }
 
   .modal__wrapper {
-    max-width: 270px;
-    max-height: 393px;
+    width: 270px;
   }
 
   .modal__close {
@@ -1337,7 +1367,7 @@ p {
   }
 
   .modal__content {
-    margin-right: 30px;
+    width: 240px;
   }
 
   .modal .pet__img {

@@ -1228,6 +1228,9 @@ p {
 
   .modal__wrapper {
     width: 682px;
+    -webkit-transform: translate(calc(-50% + 10px), -50%);
+        -ms-transform: translate(calc(-50% + 10px), -50%);
+            transform: translate(calc(-50% + 10px), -50%);
   }
 
   .modal__content {

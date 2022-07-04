@@ -6,9 +6,21 @@ body {
     display: flex;
     flex-direction: column;
 }
-header {
-    padding: 10px 30px;
+.header__wrap {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 10px 30px 50px;
 }
+.source-nav__list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
 header h1 {
     font-size: 40px;
     font-weight: 800;
@@ -37,6 +49,10 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+.source-nav {
+    display: flex;
+    align-items: center;
 }
 .footer__wrap {
     display: flex;
@@ -70,6 +86,15 @@ footer .copyright:before {
     width: 50px;
     background: url(img/github.svg) no-repeat center center;
     margin-right: 20px;
+}
+@media (max-width: 1279px) {
+    .header__wrap {
+        flex-direction: column;
+        align-content: center;
+    }
+    .header__wrap h1 {
+        text-align: center;
+    }
 }
 @media (max-width: 639px) {
     footer {

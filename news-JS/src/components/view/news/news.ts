@@ -35,7 +35,11 @@ class News {
             const newsSection = document.querySelector('.news');
             if (newsSection) {
                 newsSection.innerHTML = '';
-                newsSection.appendChild(fragment);
+                if (news.length > 0) {
+                    newsSection.appendChild(fragment);
+                } else {
+                    newsSection.innerHTML = '<div class="news__img"></div>';
+                }
             }
         }
     }

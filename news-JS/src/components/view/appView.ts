@@ -17,9 +17,18 @@ export class AppView {
         this.news.draw(values);
     }
 
-    drawSources(data: ApiData) {
+    drawSources(data: ApiData, letters?: string[]) {
         const values = data?.sources ? data?.sources : [];
-        this.sources.draw(values);
+        if (letters) {
+            const getFilterData = (arr: string[]) => {
+                return [...values].filter((item) => arr.includes(item.id.slice(0, 1).toLowerCase()));
+            };
+            const getSources = document.querySelector('.sources');
+            if (getSources) getSources.innerHTML = '';
+            this.sources.draw(getFilterData(letters));
+        } else {
+            this.sources.draw(values);
+        }
     }
 }
 

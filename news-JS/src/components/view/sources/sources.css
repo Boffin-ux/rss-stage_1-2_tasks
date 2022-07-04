@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    height: 130px;
+    height: 140px;
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
@@ -19,7 +19,8 @@
     -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 50%);
 }
 
-.source__item {
+.source__item,
+.source-nav__item {
     background: none;
     border: 2px solid #30c5ff;
     font: inherit;
@@ -31,6 +32,18 @@
     cursor: pointer;
 }
 
+.source-nav__item {
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: 700;
+}
+.item--active {
+    border-color: #3fcc59;
+    color: #69db7e;
+}
+.source-nav__item:hover,
+.source-nav__item:focus,
 .source__item:hover,
 .source__item:focus {
     border-color: #3fcc59;

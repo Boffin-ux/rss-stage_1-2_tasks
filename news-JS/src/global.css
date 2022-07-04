@@ -2,22 +2,27 @@ body {
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
 header {
     padding: 10px 30px;
 }
-
 header h1 {
     font-size: 40px;
     font-weight: 800;
 }
-
+main {
+    padding-bottom: 20px;
+}
 footer {
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
+    border-top: 1px solid #525252;
 }
 footer .copyright {
     font-size: 14px;
@@ -32,4 +37,51 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+.footer__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+}
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a8aaab;
+}
+.link {
+    height: 50px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    display: inline-block;
+    background-size: contain;
+    opacity: 0.7;
+}
+.link:hover {
+    opacity: 1;
+}
+.rs-link {
+    width: 120px;
+    background: url(img/RSSchool.svg) no-repeat center center;
+}
+.github-link {
+    width: 50px;
+    background: url(img/github.svg) no-repeat center center;
+    margin-right: 20px;
+}
+@media (max-width: 639px) {
+    footer {
+        height: 200px;
+    }
+    .footer__wrap {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 40px;
+    }
+    .rs-link {
+        width: 100%;
+    }
 }

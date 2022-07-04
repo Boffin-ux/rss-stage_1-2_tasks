@@ -1,21 +1,20 @@
-class Loader {
-    constructor(baseLink, options) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+import { ApiData, HttpStatusCode, Callback, Options } from './../types/options';
 
-    getResp(
-        { endpoint, options = {} },
-        callback = () => {
+class Loader {
+    constructor(public baseLink: string, public options: Partial<Options>) {}
+
+    protected getResp(
+        { endpoint, options = {} }: { endpoint: string; options?: Partial<Options> | object },
+        callback: Callback<ApiData> = () => {
             console.error('No callback for GET response');
         }
     ) {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res) {
+    private errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === HttpStatusCode.UNAUTHORIZED || res.status === HttpStatusCode.NOT_FOUND)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
@@ -23,23 +22,23 @@ class Loader {
         return res;
     }
 
-    makeUrl(options, endpoint) {
-        const urlOptions = { ...this.options, ...options };
+    private makeUrl(options: Partial<Options> | object, endpoint: string) {
+        const urlOptions: { [index: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
-        Object.keys(urlOptions).forEach((key) => {
+        (Object.keys(urlOptions) as Array<keyof typeof urlOptions>).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
         });
 
         return url.slice(0, -1);
     }
 
-    load(method, endpoint, callback, options = {}) {
+    private load(method: string, endpoint: string, callback: Callback<ApiData>, options: Partial<Options> | object) {
         fetch(this.makeUrl(options, endpoint), { method })
-            .then(this.errorHandler)
+            .then(this.errorHandler.bind(this))
             .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
+            .then((data: ApiData) => callback(data))
+            .catch((err: Error) => console.error(err));
     }
 }
 

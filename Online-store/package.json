@@ -35,6 +35,7 @@
     },
     "dependencies": {
         "eslint-config-airbnb-typescript": "latest",
-        "normalize.css": "latest"
+        "normalize.css": "latest",
+        "nouislider": "^15.6.0"
     }
 }

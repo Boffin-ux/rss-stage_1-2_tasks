@@ -9,7 +9,8 @@ module.exports = {
     output: {
         filename: '[hash].js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'assets/img/[name][ext]',
+        assetModuleFilename: 'assets/[hash][ext][query]',
+        clean: true,
     },
     mode: mode,
     module: {
@@ -30,6 +31,16 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'assets/img/[name][ext]',
+                },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name][ext]',
+                },
             },
         ],
     },
@@ -39,7 +50,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
-            title: 'Laptops-Store',
+            title: 'Laptop-Store',
             filename: 'index.html',
             favicon: 'src/favicon.ico',
         }),

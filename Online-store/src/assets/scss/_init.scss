@@ -1,0 +1,71 @@
+* {
+   box-sizing: border-box;
+      &::before,
+      &::after {
+         box-sizing: border-box;
+      }
+      &:focus:not(:focus-visible) {
+         outline: none;
+      }
+}
+
+html,
+body {
+   font-family: $font-main;
+   color: $color-text;
+   font-weight: normal;
+   background-color: $color-body;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+}
+
+section, main, footer, header, article {
+   display: flex;
+}
+
+ul {
+   padding-left: 0;
+   margin: 0;
+
+   li {
+      list-style: none;
+      cursor: default;
+   }
+}
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   padding: 0;
+   margin: 0;
+   color: $color-primary;
+}
+a {
+   text-decoration: none;
+   color: $color-primary;
+}
+button, input {
+   outline: none;
+   border: none;
+   cursor: pointer;
+}
+.container {
+   width: 90%;
+   margin: 0 auto;
+}
+main {
+   flex-direction: column;
+}

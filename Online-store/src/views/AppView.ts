@@ -1,5 +1,6 @@
 import { ApiData, Storage } from '../types/options';
 import RootMarkup from './root/RootMarkup';
+import Cards from './cards/Cards';
 
 export default class AppView {
     constructor(private data: ApiData[]) {
@@ -9,6 +10,11 @@ export default class AppView {
     create() {
         const root = new RootMarkup();
         root.add();
+    }
+
+    renderCard() {
+        const cards = new Cards();
+        cards.render(this.data);
     }
 
     renderFilter(filterGroup: Storage) {

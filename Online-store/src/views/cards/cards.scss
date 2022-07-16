@@ -1,0 +1,107 @@
+.product__list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 0;
+  gap: 2rem;
+}
+.card {
+  list-style: none;
+  cursor: pointer;
+  width: calc((100% / 4) - 2rem);
+  text-align: center;
+  transition: all .2s ease-in-out;
+  flex-grow: 0;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.2rem 0.4rem rgb(33 32 31 / 15%);
+    background-color: rgb(255, 255, 255);
+    gap: 1.7rem;
+    font-size: 1.6rem;
+    padding: 1.8rem;
+    height: 100%;
+  }
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &__img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 12rem;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+  &__type {
+    font-size: 1.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__price {
+    font-weight: 600;
+    margin-top: auto;
+    span {
+      opacity: .5;
+    }
+  }
+  &__btn {
+    width: 100%;
+  }
+}
+
+.card__wrap {
+    &:hover {
+      box-shadow: 0rem 0.7rem 1.9rem -0.1rem rgb(172 172 179 / 30%);
+      transition: box-shadow .15s ease-in-out;
+
+      .button {
+        background: #fc8507;
+        border-color: #ffa218;
+        color: #ffffff;
+      }
+    }
+}
+.card--add {
+  opacity: 0.8;
+    .card__wrap {
+      box-shadow: 0 0.2rem 0.4rem rgb(33 32 31 / 15%);
+      transition: none;
+    }
+  .button {
+    background: #2b2b2b;
+    border-color: #2b2b2b;
+    color: #ffffff;
+  }
+  &:hover{
+    .button {
+      background: #2b2b2b;
+      border-color: #2b2b2b;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .card {
+    width: calc((100% / 3) - 2rem);
+  } 
+}
+@media (max-width: 768px) {
+  .product__wrap {
+    flex-direction: column;
+  }
+  .product__list {
+    width: 100%;
+  }
+  .card {
+    width: calc((100% / 2) - 2rem);
+  }
+}

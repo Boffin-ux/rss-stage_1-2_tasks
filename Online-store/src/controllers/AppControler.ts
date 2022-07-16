@@ -34,6 +34,7 @@ export default class AppControler {
 
         const view = new AppView(data);
         view.create();
+        view.renderCard();
         view.renderFilter(model.getSpec(dataFilters));
 
         this.dropdownToggle();

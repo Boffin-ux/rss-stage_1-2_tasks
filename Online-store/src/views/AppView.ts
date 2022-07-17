@@ -1,6 +1,7 @@
-import { ApiData, Storage } from '../types/options';
-import RootMarkup from './root/RootMarkup';
+import { ApiData, Storage, Values } from '../types/options';
 import Cards from './cards/Cards';
+import RootMarkup from './root/RootMarkup';
+import './range.scss';
 
 export default class AppView {
     constructor(private data: ApiData[]) {
@@ -41,5 +42,19 @@ export default class AppView {
         entries.map((item) => {
             if (item[1] !== undefined) render(item[1], item[0]);
         });
+    }
+
+    renderRange(arrValue: Values) {
+        const { valueMin, valueMax } = arrValue;
+        const parent = <HTMLElement>document.querySelector('.slider');
+        parent.innerHTML = `
+            <div class="slider__title">Цена, ₽</div>
+            <div class="slider__inputs">
+                <input name="input-min" type="numeric" class="slider__min" value="${valueMin}" id="value-min">
+                <span>–</span>
+                <input name="input-max" type="numeric" class="slider__max" value="${valueMax}" id="value-max">
+            </div>
+            <div id="slider-price"></div>
+        `;
     }
 }

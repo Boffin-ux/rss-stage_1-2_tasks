@@ -19,7 +19,7 @@ export default class AppView {
 
     renderFilter(filterGroup: Storage) {
         const entries = Object.entries(filterGroup);
-        const render = (arr: string[], selector: string, hidden = true) => {
+        const render = (arr: (string | boolean)[], selector: string, hidden = true) => {
             const dropdown = document.querySelector(`.${selector}__dropdown`);
             const list = document.createElement('ul');
             list.className = 'dropdown__list';
@@ -30,7 +30,7 @@ export default class AppView {
                             <label class="dropdown__label">
                                 <input type="checkbox" class="dropdown__checkbox">
                                 <span class="dropdown__box"></span>
-                                <span class="dropdown__item-title">${str}</span>
+                                <span class="dropdown__item-title">${str as string}</span>
                             </label>
                         </li>`;
                 })
@@ -38,8 +38,8 @@ export default class AppView {
             dropdown?.append(list);
         };
 
-        entries.map((item: [string, string[]]) => {
-            render(item[1], item[0]);
+        entries.map((item) => {
+            if (item[1] !== undefined) render(item[1], item[0]);
         });
     }
 }

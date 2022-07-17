@@ -18,14 +18,16 @@ export interface ApiData {
     };
 }
 export interface Storage {
-    // [x: string]: string[] | number[] | boolean[] | undefined | string | boolean;
+    [key: string]: (string | boolean)[] | undefined;
     popular?: boolean[];
-    search?: string[] | number[];
+    search?: string[];
     brand?: string[];
     color?: string[];
     os?: string[];
     screen?: string[];
     ssd?: string[];
 }
-
-export type DataType = Pick<ApiData['specification'], 'screen' | 'CPU' | 'GPU' | 'RAM' | 'SSD' | 'OS'>;
+export type Values = {
+    valueMin: number;
+    valueMax: number;
+};

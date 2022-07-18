@@ -1,7 +1,18 @@
 import { ApiData } from '../../types/options';
 import LocalStorage from '../../controllers/LocalStorage';
 import './cards.scss';
-import '../../assets/img/default.jpg';
+import '../../assets/img/vivobook-06.jpg';
+import '../../assets/img/a516ea-05.jpg';
+import '../../assets/img/gamingf15-04.jpg';
+import '../../assets/img/aspire3-03.jpg';
+import '../../assets/img/nitro5-02.jpg';
+import '../../assets/img/swift3-01.jpg';
+import '../../assets/img/ideapad3-07.jpg';
+import '../../assets/img/v15-08.jpg';
+import '../../assets/img/slim7-09.jpg';
+import '../../assets/img/katana-010.jpg';
+import '../../assets/img/thin-011.jpg';
+import '../../assets/img/alpha-012.jpg';
 
 export default class Cards {
     storage: LocalStorage;

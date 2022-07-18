@@ -245,7 +245,8 @@ export default class AppControler {
 
             list.forEach((item) => {
                 const parent = <HTMLElement>item.parentNode;
-                if (parent.className.indexOf('brand')) item.classList.add('list--hidden');
+                const getItem = parent.querySelector('.item--active');
+                if (parent.className.indexOf('brand') && !getItem) item.classList.add('list--hidden');
             });
             [...checkboxes].map((checkbox) => {
                 if (checkbox && checkbox.checked) checkbox.checked = false;

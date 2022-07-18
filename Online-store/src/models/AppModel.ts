@@ -78,6 +78,11 @@ export default class AppModel {
             const value = activeFilter.screen;
             newData = newData.filter((item) => value.includes(item.specification.screen[0]));
         }
+        if (rangePrice && rangePrice.length > 0) {
+            newData = newData
+                .filter((item) => item.price >= Number(rangePrice[0]) && item.price <= Number(rangePrice[1]))
+                .sort((a, b) => a.price - b.price);
+        }
         if (activeSort && activeSort.length > 0) {
             if (activeSort === 'a-z') {
                 newData = newData.sort((a, b) => {
@@ -104,11 +109,6 @@ export default class AppModel {
             } else if (activeSort === 'price-dic') {
                 newData = newData.sort((a, b) => b.price - a.price);
             }
-        }
-        if (rangePrice && rangePrice.length > 0) {
-            newData = newData
-                .filter((item) => item.price >= Number(rangePrice[0]) && item.price <= Number(rangePrice[1]))
-                .sort((a, b) => a.price - b.price);
         }
         return newData;
     }

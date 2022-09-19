@@ -1,2 +1,3 @@
-# boffin-ux-JSFE2022Q1
-Private repository for @boffin-ux
+- <a href="https://boffin-ux.github.io/rss-stage_1-2_tasks/shelter">Shelter</a> - JavaScript
+- <a href="https://boffin-ux.github.io/rss-stage_1-2_tasks/news-JS">News-JS</a> - Migration from JS to TS
+- <a href="https://boffin-ux.github.io/rss-stage_1-2_tasks/Online-store">Online-Store</a> - Typescript
